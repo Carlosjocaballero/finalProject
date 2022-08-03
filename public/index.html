@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musify</title>
+    <link rel="stylesheet" href="./css/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body class="">
+    <nav
+      class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75"
+      x-data="{navBarOpen:false}"
+    >
+      <!-- Container start -->
+      <div
+        class="container flex flex-wrap px-4 py-2 mx-auto lg:mx-0 lg:space-x-4"
+      >
+        <!-- brand start -->
+        <a
+          href=""
+          class="inline-flex p-2 text-stone-300 text-xl font-bold uppercase tracking-wider font-title"
+          >Musify</a
+        >
+        <!-- brand end -->
+
+        <!-- toggler btn start  -->
+        <button
+          class="lg:hidden inline-flex items-center justify-center border text-stone-300 h-10 w-10 rounded-md outline-none focus:outline-none ml-auto"
+          @click="navBarOpen = !navBarOpen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <!-- toggler btn end -->
+
+        <!-- menu start -->
+        <div
+          class="w-full lg:inline-flex lg:w-auto mt-2 lg:mt-0"
+          :class="{'hidden':!navBarOpen, 'flex':navBarOpen}"
+        >
+          <ul
+            class="w-full lg:w-auto flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0"
+          >
+            <li>
+              <a
+                href="#"
+                class="flex px-4 py-2 font-medium text-stone-300 hover:bg-stone-700 rounded-md"
+                >Home</a
+              >
+            </li>
+            <!-- Dropdown Start -->
+            <li class="relative" x-data="{dropDownOpen:false}">
+              <button
+                href="#"
+                class="flex w-full outline-none focus:outline-none px-4 py-2 font-medium text-stone-300 hover:bg-stone-700 rounded-md"
+                @click="dropDownOpen = !dropDownOpen"
+              >
+                Products
+              </button>
+              <!-- Dropdown menu start -->
+              <div
+                class="lg:absolute bg-stone-300 right-0 rounded-md p-2"
+                :class="{'hidden':!dropDownOpen, 'flex flex-col':dropDownOpen}"
+              >
+                <ul class="space-y-2 lg:w-48">
+                  <li>
+                    <a
+                      href="#"
+                      class="flex p-2 font-medium text-stone-500 rounded-md hover:bg-stone-800 hover:text-stone-300"
+                      >Item a</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex p-2 font-medium text-stone-500 rounded-md hover:bg-stone-800 hover:text-stone-300"
+                      >Item b</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex p-2 font-medium text-stone-500 rounded-md hover:bg-stone-800 hover:text-stone-300"
+                      >Item c</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- Dropdown menu end -->
+            </li>
+            <!-- Dropdown end -->
+            <li>
+              <a
+                href="#"
+                class="flex px-4 py-2 font-medium text-stone-300 hover:bg-stone-700 rounded-md"
+                >Contact us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex px-4 py-2 font-medium text-stone-300 hover:bg-stone-700 rounded-md"
+                >About</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- menu start -->
+      </div>
+      <!-- Container end -->
+    </nav>
+    <section
+      class="flex items-center w-screen justify-center h-screen mb-0 bg-fixed bg-center bg-cover custom-img"
+      style="background-image: url(./imgs/main.jpg)"
+    >
+      <div
+        class="p-5 lg:text-main-title text-9xl text-stone-300 capitalize font-title"
+      >
+        Musify.
+      </div>
+    </section>
+    <div class="w-auto bg-primary p-10">
+      <div class="max-w-lg m-auto">
+        <h1
+          class="text-5xl text-center ml-0 font-title uppercase mb-4 text-stone-300"
+        >
+          The best in the music industry.
+        </h1>
+        <p class="mb-4 m-auto text-lg text-left font-main-text text-secondary">
+          From all over the glove our products have inpacted thousands of lifes
+          by imporing the way people experience music. Our teams focus on
+          maximizing quality of sounds in different forms of listening to music.
+        </p>
+
+        <p class="mb-4 m-auto text-lg text-left font-main-text text-secondary">
+          Enjoy your favorite music and artists from Spotify and Apple Music
+          from anywhere with the latest technology of
+          <b>Bluetooth Version 5.2</b> in which users can enjoy
+          <b>faster pairing and much better battery life</b>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
