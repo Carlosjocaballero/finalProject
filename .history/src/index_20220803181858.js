@@ -8,7 +8,14 @@ let port = 6000;
 const { Client } = require("pg");
 
 // Create a client using the connection information provided on bit.io.
-const client = new Client({});
+const client = new Client({
+  user: "GettingStarted",
+  host: "db.bit.io",
+  database: "Victorjota/musifydb", // public database
+  password: "v2_3t74a_Kyh3qSGDNgHN87athHUF5pX", // key from bit.io database page connect menu
+  port: 5432,
+  ssl: true,
+});
 client.connect((error) => {
   if (error) throw error;
   console.log("Successfully connected to the database.");
